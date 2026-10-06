@@ -97,11 +97,15 @@ main() {
 	esac
 
 	dir=$CLAUDE_PROJECT_DIR/$adr_dir
-	[ -d "$dir" ] && [ ! -L "$dir" ] || return 0
+	if [ ! -d "$dir" ] || [ -L "$dir" ]; then
+		return 0
+	fi
 
 	set --
 	for f in "$dir"/[0-9][0-9][0-9][0-9]-*.md; do
-		[ -f "$f" ] && [ ! -L "$f" ] && [ -r "$f" ] || continue
+		if [ ! -f "$f" ] || [ -L "$f" ] || [ ! -r "$f" ]; then
+			continue
+		fi
 		set -- "$@" "$f"
 	done
 
