@@ -1,0 +1,18 @@
+{
+  "description": "Remind Claude to respect Accepted ADRs when the project has an ADR directory.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh",
+            "args": ["${CLAUDE_PLUGIN_ROOT}/hooks/adr-context.sh"],
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

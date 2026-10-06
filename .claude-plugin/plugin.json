@@ -1,0 +1,24 @@
+{
+  "name": "own",
+  "displayName": "Own",
+  "version": "0.1.0",
+  "description": "Keep ownership of architecture while Claude writes the code: ADRs Claude must respect, a clean-context design critic, and explain-back checks.",
+  "author": { "name": "Aleksey Onipko" },
+  "repository": "https://github.com/Tvist1988/own",
+  "license": "MIT",
+  "keywords": ["adr", "architecture", "design-review", "code-ownership"],
+  "userConfig": {
+    "adr_dir": {
+      "type": "string",
+      "title": "ADR directory",
+      "description": "Path to ADRs relative to the project root",
+      "default": "docs/adr"
+    },
+    "inject_adr_context": {
+      "type": "boolean",
+      "title": "Inject ADR rules at session start",
+      "description": "When the ADR directory exists, tell Claude to respect Accepted ADRs",
+      "default": true
+    }
+  }
+}

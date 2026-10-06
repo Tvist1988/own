@@ -1,0 +1,12 @@
+{
+  "name": "own",
+  "owner": { "name": "Aleksey Onipko" },
+  "metadata": { "description": "Own for Claude Code" },
+  "plugins": [
+    {
+      "name": "own",
+      "source": "./",
+      "description": "ADRs Claude must respect, a clean-context design critic, and explain-back checks."
+    }
+  ]
+}
