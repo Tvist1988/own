@@ -31,7 +31,7 @@ expect_empty() {
 }
 expect_contains() {
 	case $out in
-	*"$2"*) [ "$code" -eq 0 ] && pass || fail "$1: exit $code" ;;
+	*"$2"*) if [ "$code" -eq 0 ]; then pass; else fail "$1: exit $code"; fi ;;
 	*) fail "$1: expected to contain: $2" ;;
 	esac
 }
